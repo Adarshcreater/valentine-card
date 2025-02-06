@@ -158,13 +158,21 @@ body {
   }
 }
 
-/* Style burst images to be more visually appealing */
+/* Style burst images to be more visually appealing with square and rectangle shapes */
 .burst {
-  width: 100px; /* Adjust size for visibility */
+  width: 120px; /* Square shape */
+  height: 120px;
+  position: absolute;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.burst-rectangle {
+  width: 150px; /* Rectangle shape */
   height: 100px;
   position: absolute;
   opacity: 1;
   transition: opacity 1s ease-in-out;
-  border-radius: 50%;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
