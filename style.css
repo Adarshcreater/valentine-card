@@ -160,8 +160,8 @@ body {
 
 /* Style burst images to be more visually appealing with square and rectangle shapes */
 .burst {
-  width: 200px; /* Square shape */
-  height: 200px;
+  width: 400px; /* Square shape */
+  height: 400px;
   position: absolute;
   opacity: 1;
   transition: opacity 1s ease-in-out;
@@ -170,8 +170,8 @@ body {
 }
 
 .burst-rectangle {
-  width: 250px; /* Rectangle shape */
-  height: 150px;
+  width: 450px; /* Rectangle shape */
+  height: 450px;
   position: absolute;
   opacity: 1;
   transition: opacity 1s ease-in-out;
