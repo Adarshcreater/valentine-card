@@ -158,11 +158,13 @@ body {
   }
 }
 
-
+/* Style burst images to be more visually appealing */
 .burst {
-  width: 400px; 
-  height: 400px;
+  width: 100px; /* Adjust size for visibility */
+  height: 100px;
   position: absolute;
   opacity: 1;
   transition: opacity 1s ease-in-out;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
