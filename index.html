@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Card</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="valentines">
+            <div class="envelope"></div>
+            <div class="front"></div>
+            <div class="card">
+                <div class="text">Hey<br> baby, will you <br>be my valentine?<br></div>
+                <div class="heart"></div>
+            </div>
+        </div>
+    </div>
+    <div class="shadow"></div>
+
+    <!-- Adding burst images dynamically -->
+    <div class="burst-container"></div>
+    
+    <button class="confirm-button">Confirm</button>
+
+    <script>
+        $(document).ready(function () {
+            $(".container").mouseenter(function () {
+                $(".card").stop().animate({ top: "-90px" }, "slow", function () {
+                    burstImages();
+                    setTimeout(removeBurstImages, 10000);
+                });
+            }).mouseleave(function () {
+                $(".card").stop().animate({ top: 0 }, "slow");
+            });
+
+            $(".confirm-button").click(function () {
+                alert("Yay! She said YES! 💖");
+                sendConfirmationEmail();
+            });
+        });
+
+        function burstImages() {
+            let images = ["best.jpg", "hug.jpg", "kiss.jpg", "like.jpg", "love.jpg", "mine.jpg"];
+            for (let i = 0; i < 15; i++) {
+                let imgSrc = images[Math.floor(Math.random() * images.length)];
+                let img = $('<img src="' + imgSrc + '" class="burst">');
+                $(".burst-container").append(img);
+                animateBurst(img);
+            }
+        }
+
+        function animateBurst(img) {
+            let x = Math.random() * window.innerWidth;
+            let y = Math.random() * window.innerHeight;
+            img.css({ left: "50%", top: "50%", position: "absolute", transform: "translate(-50%, -50%) scale(0.5)" });
+            img.animate({ left: x, top: y, opacity: 0 }, 2000, function () { $(this).remove(); });
+        }
+
+        function removeBurstImages() {
+            $(".burst-container").empty();
+        }
+
+        function sendConfirmationEmail() {
+            $.post("send_email.php", { 
+                email: "adarshprabhalkar77@gmail.com", 
+                message: "She accepted your Valentine’s proposal! 💖" 
+            }, function (response) {
+                console.log(response);
+            });
+        }
+    </script>
+</body>
+</html>
