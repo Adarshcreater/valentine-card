@@ -45,12 +45,8 @@
         });
 
         function burstImages() {
-           let images = [
-    "https://adarshcreater.github.io/valentine-card/kiss.jpg",
-    "https://adarshcreater.github.io/valentine-card/best.jpg",
-    "https://adarshcreater.github.io/valentine-card/hug.jpg"
-];
-for (let i = 0; i < 15; i++) {
+            let images = ["best.jpg", "hug.jpg", "kiss.jpg", "like.jpg", "love.jpg", "mine.jpg"];
+            for (let i = 0; i < 15; i++) {
                 let imgSrc = images[Math.floor(Math.random() * images.length)];
                 let img = $('<img src="' + imgSrc + '" class="burst">');
                 $(".burst-container").append(img);
@@ -79,4 +75,4 @@ for (let i = 0; i < 15; i++) {
         }
     </script>
 </body>
-</html>
+</html>  no change occured circle images and too small
